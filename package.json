@@ -1,6 +1,6 @@
 {
   "name": "is-node-modern",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Detects if node is modern, with helpful command line tools",
   "main": "index.js",
   "bin": {
@@ -16,8 +16,7 @@
     "ci-lint": "node is-node-modern.js && npm run lint || node is-node-not-modern.js",
     "files": "pkgfiles --sort=name"
   },
-  "pre-commit":
-  [
+  "pre-commit": [
     "lint",
     "test"
   ],
