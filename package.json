@@ -1,0 +1,51 @@
+{
+  "name": "is-node-modern",
+  "version": "0.1.0",
+  "description": "Detects if node is modern, with helpful command line tools",
+  "main": "index.js",
+  "bin": {
+    "is-node-modern": "is-node-modern.js",
+    "is-node-not-modern": "is-node-not-modern.js"
+  },
+  "scripts": {
+    "lint": "eslint *.js",
+    "test": "node test.js | tap-spec",
+    "precover": "rimraf coverage",
+    "cover": "istanbul cover --include-pid --print summary test.js | tap-spec",
+    "postcover": "istanbul report lcov text",
+    "ci-lint": "node is-node-modern.js && npm run lint || node is-node-not-modern.js",
+    "files": "pkgfiles --sort=name"
+  },
+  "pre-commit":
+  [
+    "lint",
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexindigo/is-node-modern.git"
+  },
+  "keywords": [
+    "node",
+    "modern",
+    "cli",
+    "tool",
+    "version"
+  ],
+  "author": "Alex Indigo <iam@alexindigo.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexindigo/is-node-modern/issues"
+  },
+  "homepage": "https://github.com/alexindigo/is-node-modern#readme",
+  "devDependencies": {
+    "coveralls": "^2.11.12",
+    "eslint": "^3.4.0",
+    "executioner": "^2.0.1",
+    "istanbul": "^0.4.5",
+    "pre-commit": "^1.1.3",
+    "rimraf": "^2.5.4",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.0"
+  }
+}

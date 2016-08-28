@@ -1,0 +1,19 @@
+verbose: false
+instrumentation:
+    root: .
+    extensions:
+        - .js
+    default-excludes: true
+    excludes: ['node_modules']
+    compact: false
+reporting:
+    root: ./coverage
+    print: none
+    reports:
+        - json
+    dir: ./coverage
+    watermarks:
+        statements: [90, 99]
+        lines: [90, 99]
+        functions: [90, 99]
+        branches: [90, 99]
